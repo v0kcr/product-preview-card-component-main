@@ -1,0 +1,113 @@
+
+:root {
+    /*-- Colores --*/
+    --dark-cyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+    --very-dark-blue: hsl(212, 21%, 14%);
+    --dark-grayish-blue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+    /*-- Fuente --*/
+    --font-body: 'Montserrat', sans-serif;
+    --font-title: 'Fraunces', serif;
+    --font-weight-regular: 500;
+    --font-weight-bold: 700;
+    --font-size-paragraph: 14px;
+    /*-- Medidas --*/
+    --max-width-desktop: 500px;
+    --max-width-mobile: 375px;
+}
+
+/*-- Estilos Base --*/
+body {
+    font-family: var(--font-body);
+    font-size: var(--font-size-paragraph);
+    color: var(--dark-grayish-blue);
+    background-color: var(--cream);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    gap: 3rem;
+}
+.container {
+    background-color: var(--white);
+    max-width: var(--max-width-mobile);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+}
+@media (min-width: 760px) {
+    .container {
+        max-width: var(--max-width-desktop);
+        display: flex;
+    }
+}
+/*-- Estilos Card --*/
+picture img {
+    width: 100%;
+}
+@media (min-width: 760px) {
+    picture img {
+        height: 100%;
+    }
+}
+h1 {
+    font-family: var(--font-title);
+    font-weight: var(--font-weight-bold);
+    color: var(--very-dark-blue);
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+.content{
+    padding: 1.4rem;
+    .content__header{
+        text-transform: uppercase;
+        font-weight: var(--font-weight-regular);
+        letter-spacing: 0.3rem;
+        margin: 0;
+    }
+    .container__description{
+        line-height: 1.5;
+        font-family: var(--font-body);
+    }
+    .content__price {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin: 1rem 0;
+    }
+    
+    .content__price p:first-child {
+        font-family: var(--font-title);
+        font-weight: var(--font-weight-bold);
+        color: var(--dark-cyan);
+        font-size: 40px;
+        margin: 0;
+    }
+    
+    .content__price p:last-child {
+        font-size: var(--font-size-paragraph);
+        color: var(--dark-grayish-blue);
+        text-decoration: line-through;
+        margin: 0;
+    }
+}
+button {
+    width: 100%;
+    background-color: var(--dark-cyan);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-size: var(--font-size-paragraph);
+    font-weight: var(--font-weight-bold);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+button:hover {
+    background-color: hsl(158, 36%, 30%);
+}
